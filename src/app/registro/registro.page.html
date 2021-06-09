@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="usuarios()">
+      <ion-button color="primary">
+        <ion-icon  name="arrow-back">
+        </ion-icon>
+      </ion-button>
+      </ion-buttons>
+    <ion-title>Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">
+      Nome
+    </ion-label>
+    <ion-input [(ngModel)]="nome"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Telefone
+    </ion-label>
+    <ion-input [(ngModel)]="telefone"></ion-input>
+
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">
+      Endereço
+    </ion-label>
+    <ion-input [(ngModel)]="endereco"></ion-input>
+
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">
+      E-mail
+    </ion-label>
+    <ion-input [(ngModel)]="email"></ion-input>
+
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">
+      Senha
+    </ion-label>
+    <ion-input [(ngModel)]="senha"></ion-input>
+
+  </ion-item>
+
+  <ion-button *ngIf="!id" color="success" expand="black" (click)="salvar()">
+    Salvar
+  </ion-button>
+  <ion-button *ngIf="id" color="success" expand="black" (click)="editar()">
+    Editar
+  </ion-button>
+
+
+
+
+</ion-content>
