@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-row class="azul-primary padding-lateral">
+  
+  <ion-input placeholder="Buscar" [(ngModel)]="nome" type="search" (input)="carregar()" ></ion-input>
+
+  <ion-buttons (click)="carregar()">
+    <ion-button>
+      <ion-icon slot="end" name="search"></ion-icon>
+    </ion-button>
+    <ion-button  (click)="logout()">
+      <ion-icon slot="end" name="log-out"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+</ion-row>
+
+<ion-content class="cart">
+  <ion-card *ngFor="let publicacao of publicacaos">
+    <ion-card-header>
+      <ion-fab>
+        <ion-fab-button size="small" class="menu">
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list class="menu">
+          <ion-fab-button (click)="editar(publicacao.id, publicacao.publicacao)"><ion-icon name="pencil-outline"></ion-icon></ion-fab-button>
+        
+          <ion-fab-button (click)="delete(publicacao.id)"><ion-icon name="trash"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{publicacao.publicacao}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      
+      refreshingSpinner="circles"
+      refreshingText="Carregando...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  
+  
+  
+  
+  
+  <ion-infinite-scroll  (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Carregando mais dados">
+  </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
+</ion-content>
+

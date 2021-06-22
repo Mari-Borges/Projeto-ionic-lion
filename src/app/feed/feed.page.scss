@@ -1,0 +1,21 @@
+.cart{
+
+  ion-card{
+      position: relative;
+      height: 200px;
+  }
+  ion-card-content{
+      position: relative;
+      top: 50px
+  }
+  ion-card-header{
+      position: relative;
+      height: 50px;
+  }
+  .menu{
+      position: relative;
+      left: 190px;
+      --background: linear-gradient(to top, #0e0e0e, #e6a7cb);
+      margin-top: 0;
+  }
+}

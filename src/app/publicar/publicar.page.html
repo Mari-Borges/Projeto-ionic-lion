@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>publicar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Publicar</ion-label>
+    <ion-input [(ngModel)]="publicacao"></ion-input>
+  </ion-item>
+
+</ion-content>
+ 
+<div>
+  <ion-button *ngIf="!id" expand="block" padding color="tertiary" (click)="publicar()">
+    publicar
+  </ion-button>
+</div>

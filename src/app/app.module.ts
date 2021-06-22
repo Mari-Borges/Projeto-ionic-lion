@@ -1,3 +1,4 @@
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -8,6 +9,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Post } from '../service/post';
+import { Lion } from '../service/lion';
+
+
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +26,10 @@ import { Post } from '../service/post';
   ],
   providers: [
     Post,
-  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+    Lion,
+    NativeStorage,
+   { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+
   ],
   bootstrap: [AppComponent],
 })
